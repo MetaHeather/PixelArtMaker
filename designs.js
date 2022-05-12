@@ -18,12 +18,17 @@ function makeGrid() {
       }
     }
 }
-
+//Clears the Grid
+function clearGrid(){
+    TABLE.innerHTML = "";
+}
+//Prevents default of submit button refreshing page
 function handleClick(evt){
     evt.preventDefault()
+    clearGrid()
     makeGrid()
 }
-
+//Adds listener on submit to make grid when clicked
 SUBMIT.addEventListener("click", handleClick)
 
 
