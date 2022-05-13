@@ -23,10 +23,20 @@ function makeGrid() {
 function clearGrid(){
     TABLE.innerHTML = "";
 }
+// Checks that the user inputed grid size is within parameters and adjusts if over
+function limitGridSize(){
+    if(HEIGHT.value > 60){
+      HEIGHT.value = 60
+    }
+    if(WIDTH.value > 60){
+      WIDTH.value = 60
+    }
+}
 //Prevents default of submit button refreshing page
 function handleSubmitClick(evt){
     evt.preventDefault()
     clearGrid()
+    limitGridSize()
     makeGrid()
 }
 // function
