@@ -14,6 +14,7 @@ function makeGrid() {
       TABLE.appendChild(row);
       for(let i=0; i<WIDTH.value; i++){
         let cell = document.createElement('td');
+        cell.addEventListener("click", handleCellClick)
         row.appendChild(cell);    
       }
     }
@@ -23,13 +24,17 @@ function clearGrid(){
     TABLE.innerHTML = "";
 }
 //Prevents default of submit button refreshing page
-function handleClick(evt){
+function handleSubmitClick(evt){
     evt.preventDefault()
     clearGrid()
     makeGrid()
 }
+// function
+function handleCellClick(evt){
+  evt.target.style.background = COLORINPUT.value;
+}
 //Adds listener on submit to make grid when clicked
-SUBMIT.addEventListener("click", handleClick)
+SUBMIT.addEventListener("click", handleSubmitClick)
 
 
 

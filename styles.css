@@ -27,12 +27,11 @@ table {
     margin: 0 auto;
 }
 
-tr {
-    height: 20px;
-}
+
 
 td {
-    width: 20px;
+    height: 10px;
+    width: 10px;
 }
 
 input[type=number] {
